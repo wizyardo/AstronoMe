@@ -1,0 +1,293 @@
+PantallaPrincipal:
+	BoxLayout:
+		GridLayout:
+			cols:2
+			cols_minimum: {0: .3, 1: 630}
+			
+			StackLayout:
+				orientation: 'tb-lr'
+				canvas.before:
+					Color:
+						rgb: .24, .29, .73
+					Rectangle:
+						pos: self.pos
+						size: self.size
+
+				Button:
+					text: "Inicio" 
+					size_hint: [1 ,.1]
+					text_size: self.size
+					halign: 'center'
+					valign: 'center'
+					on_press:
+						app.root.ids.wm.current = "info"
+
+				Button:
+					text: "Agujeros negros" 
+					size_hint: [1 ,.1]
+					text_size: self.size
+					halign: 'center'
+					valign: 'center'
+					on_press: 
+						app.root.ids.wm.current = "agujeros"
+					
+				Button:
+					text: "Misiones Espaciales"
+					size_hint: [1 ,.1]
+					text_size: self.size
+					halign: 'center'
+					valign: 'center'
+					on_press:
+						app.root.ids.wm.current = "misiones"
+
+				Button:
+					text: "Energ" + u"\u00ed" + "a oscura" 
+					size_hint: [1 ,.1]
+					text_size: self.size
+					halign: 'center'
+					valign: 'center'
+					on_press:
+						app.root.ids.wm.current = "energia"
+
+				Button:
+					text: "Exoplanetas"
+					size_hint: [1 ,.1]
+					text_size: self.size
+					halign: 'center'
+					valign: 'center'
+					on_press:
+						app.root.ids.wm.current = "exoplanetas"
+
+				Button:
+					text: "Galaxias" 
+					size_hint: [1 ,.1]
+					text_size: self.size
+					halign: 'center'
+					valign: 'center'
+					on_press:
+						app.root.ids.wm.current = "galaxias"
+
+				Button:
+					text: "Telescopios" 
+					size_hint: [1 ,.1]
+					text_size: self.size
+					halign: 'center'
+					valign: 'center'
+					on_press:
+						app.root.ids.wm.current = "telescopios"
+
+				Button:
+					text: "Las Estrellas" 
+					size_hint: [1 ,.1]
+					text_size: self.size
+					halign: 'center'
+					valign: 'center'
+					on_press:
+						app.root.ids.wm.current = "estrellas"
+
+				Button:
+					text: "Dato al azar"
+					size_hint: [1 ,.1]
+					text_size: self.size
+					halign: 'center'
+					valign: 'center'
+					on_press:
+						app.root.ids.wm.current = "dato"
+
+				Button:
+					text: "Bibliograf" + u"\u00ed" + "a"
+					size_hint: [1 ,.1]
+					text_size: self.size
+					halign: 'center'
+					valign: 'center'
+					on_press:
+						app.root.ids.wm.current = "bibliografia"
+
+			WindowManager:
+				id: wm
+				canvas.before:
+    				Color:
+        				rgb: .24, .29, .73
+    				Rectangle:
+        				pos: self.pos
+        				size: self.size
+				PantallaInfo:
+					name: "info"
+				AgujerosNegros:
+					name: "agujeros"
+				Misiones:
+					name: "misiones"
+				EnergiaOscura:
+					name: "energia"
+				Exoplanetas:
+					name: "exoplanetas"
+				Galaxias:
+					name: "galaxias"
+				Telescopios:
+					name: "telescopios"
+				LasEstrellas:
+					name: "estrellas"
+				DatoAlAzar:
+					name: "dato"
+				Bibliografia:
+					name: "bibliografia"
+
+<P>:
+	Label:	
+		text: app.popup.azar()
+		text_size: self.size
+		halign: 'center'
+		valign: 'center'
+
+
+<PantallaInfo>:
+	BoxLayout:
+		GridLayout:
+			rows: 2
+
+
+			Image:
+				source: 'Captura de Pantalla 2020-08-22 a la(s) 18.50.10.png'
+				allow_stretch: True
+
+			Label: 
+				font_size: 20
+				text: u"\u00a1" + "Hola, gracias por usar AstronoMe!"
+
+<AgujerosNegros>:
+	BoxLayout:	
+		GridLayout:
+			rows: 2
+			
+			Image:
+				source: 'agujero_negro.jpg'
+				allow_stretch: True
+
+			Label:
+				text: "Un agujero negro es una regi" +u"\u00f3" "n muy densa del espacio (mucha masa en funci" + u"\u00f3" + 'n de volumen).\nDebido a la alta densidad, ni siquiera la luz logra escapar. \nEstos agujeros generalmente se forman cuando una estrella "muere" y colapsa sobre si misma.'
+
+<Misiones>:
+	BoxLayout:
+		GridLayout:
+			rows: 2
+
+			Image:
+				source: 'apollo11.jpeg'
+				allow_stretch: True
+
+			Label:
+				text: "Probablemente la misi" + u"\u00f3" + "n m" + u"\u00e1" + "s conocida es el Apollo 11, debido a que fue la primera \nvez que llegaron humanos a la luna. Tambi" +u"\u00e9" + "n han habido otras misiones famosas \nno tripuladas; como el lanzamiento del telescopio espacial Hubble \n(abordo del transbordador espacial discovery), \no una misi" + u"\u00f3" + "n m" + u"\u00e1" + "s reciente como el lanzamiento del rover perseverance (perceverancia en \nespa" + u"\u00f1" + "ol). El destino de este rover es Marte y llegar" + u"\00e1" + " en febrero 2021"
+
+<EnergiaOscura>:
+	BoxLayout:
+		GridLayout:
+			rows: 2
+
+			Image:
+				source: 'RedimensionamientodeOscura.jpg'
+				allow_stretch: True
+
+
+			Label:
+				text: "La energ" + u"\u00ed" + "a oscura es una fuerza de repulsi" + u"\u00f3" + "n dentro de un espacio vac" + u"\u00ed" + "o." "\nEste tipo de energ" + u"\u00ed" + "a fue descubierta en el a" + u"\u00f1" "o" + "1998. En este mismo a" + u"\u00f1" + "o se descubri" + u"\u00f3" + " que el universo\nest" + u"\u00e1" + " compuesto por un 68% energ" + u"\u00ed" + "a oscura, un 27% materia oscura (o antimateria) y tan solo un \n5% es materia com" + u"\u00fa" + "n (" + u"\u00e1" + "tomos). Este tipo de energ" + u"\u00ed" + "a hace que el universo se expanda cada vez m" + u"\u00e1" "s \nr" + u"\u00e1" + "pido. Se llama energ" + u"\u00ed" + "a oscura debido a que no se conoce mucho de ella, no por su \nluminosidad."
+
+<Exoplanetas>:
+	BoxLayout:
+		GridLayout:
+			rows: 2
+
+			Image:
+				source: 'exoplanetas.jpg'
+				allow_stretch: True
+
+			Label:	
+				text: "Se conoce como exoplaneta a cualquier planeta que orbita una estrella que no es nuestro sol. \nEn el a" + u"\u00f1" + "o 2009 la NASA lanz" + u"\u00f3" + " una nave llamada Kepler, que tiene como funci" + u"\u00f3" + 'n \ndetectar este tipo de planetas. Algunos de ellos se encuentran en la zona "ricitos de oro". \nEsto significa que el planeta se \nencuentra a la distancia ideal entre un planeta y su estrella para poder tener agua l' + u"\u00ed" + "quida. \nEsto significa que podr" + u"\u00ed" + "a haber vida como la conocemos."
+
+<Galaxias>:
+	BoxLayout:
+		GridLayout:
+			rows: 2
+
+			Image:
+				source: 'Types-of-Galaxies.jpg'
+				allow_stretch: True
+
+			Label:
+				text: "Las galaxias son un conjunto de miles de millones de estrellas, gas, polvo y otros cuerpos celestes.\nLas galaxias se mantienen unidas gracias a la fuerza de gravedad. \nExisten tres grandes tipos de galaxias: galaxias espirales, galaxias el" + u"\u00ed" + "pticas y galaxias irrregulares. \nSe cree que al centro de todas las galaxias hay un agujero negro supermasivo."
+
+<Telescopios>:
+	BoxLayout:
+		GridLayout:
+			rows: 2
+
+			Image:
+				source: 'conocer-ciencia-observatorio-astronomico-xlsemanal-2-e1515753531721.jpg'
+				allow_stretch: True
+
+			Label:
+				text: "Un telescopio es un instumento " + u"\u00f3" + "ptico que permite ver objetos muy, muy lejanos. \nExisten diversos tipos de telescopios como: reflectores (que utilizan espejos), \nrefractores (que utilizan lentes), catadi" + u"\u00f3" + "ptricos (que utilizan lentes y espejos). \nTambi" + u"\u00e9" + "n existen los radiotelescopios. Este tipo de telescopios utilizan las ondas \nde radio y magn" + u"\u00e9" + "ticas emitidas por distintos cuerpos celestes. \nChile se caracteriza por tener unos de los mejores observatorios y radiotelescopios del mundo."
+
+<LasEstrellas>:
+	BoxLayout:
+		GridLayout:
+			rows: 2
+
+			Image:
+				source: 'hubble-galaxias-1440x808.jpg'
+				allow_stretch: True
+
+			Label:
+				text: "Las estrellas son cuerpos celestes gigantes, compuestos principalmente \npor hidr" + u"\u00f3" + "geno y helio. \nEstos cuerpos producen energ" + u"\u00ed" + "a a trav" + u"\u00e9" + "s de la fusi" + u"\u00f3" + "n nuclear. \nLa estrella principal (y posiblemente la m" + u"\u00e1" + "s conocida) de nuestro sistema solar es el sol. \nLas estrellas se demoran miles de millones de a" + u"\u00f1" + 'os en "nacer" y \npueden estar otros miles de millones de a' + u"\u00f1" + 'os "vivas".'
+
+<DatoAlAzar>:
+	BoxLayout:
+		GridLayout:
+			rows:2
+
+			BoxLayout:
+
+			AnchorLayout:
+				anchor_x: 'center'
+				anchor_y: 'center'
+
+				Button:
+					text: "Dato al azar"
+					size_hint: [.8, .5]
+					halign: 'center'
+					valign: 'center'
+					on_release: 
+						root.btn()
+
+<Bibliografia>:
+	BoxLayout:
+		GridLayout:
+			rows: 7
+
+			Label:
+				font_size: 10
+				text: "BBC news mundo, (10 de abril de 2019), 'Que es un agujero negro (y podria la Tierra caer en uno?)', \nrecuperado de https://www.bbc.com/mundo/noticias-47884630 , 2 de junio 2020"
+
+			Label:
+				font_size: 10
+				text: "NASA, (ultima actualizacion el 7 de agosto 2020, 'Hubble Space Telescope', \nrecuperado de https://www.nasa.gov/mission_pages/hubble/main/index.html, 20 de agosto 2020. \nNASA, (ultima actualizacion el 31 de julio 2020), 'Mars Perserverance Rover', \nrecuperado de https://www.nasa.gov/perseverance, 20 de agosto 2020"
+
+			Label: 
+				font_size: 10
+				text: "'En 1998 se anuncia, por parte de dos grupos de astronomos norteamericanos, que el universo en gran \nescala se esta acelerando en su expansion. (...) \nLa fuerza repulsiva proviene de una energia que estaria asociada al vacio, que se le ha mal llamado energia oscura (...)' \n(Maza Jose Maria,'Somos polvo de estrellas', agosto de 2019 [20a edicion], p. 89, 90)"
+
+			Label:
+				font_size: 10
+				text: "Anonimo, (ultima actualizacion el 24 de octubre 2019), 'Que es un exoplaneta', \nrecuperado de https://spaceplace.nasa.gov/all-about-exoplanets/sp/ , 2 de junio 2020"
+
+			Label:
+				font_size: 10
+				text: "Anonimo, (ultima actualizacion el 19 de agosto 2020), 'Que es una galaxia', \nrecuperado de https://spaceplace.nasa.gov/galaxy/sp/ , 20 de agosto 2020"
+
+			Label:
+				font_size: 10
+				text: "Agrupacion astronomica de Cordoba, (sin fecha de publicacion), 'Tipos de telescopios', \nrecuperado de https://www.astrocordoba.es/articulos-astronomicos/66-tipos-de-telescopios , 20 de agosto 2020"
+
+			Label:
+				font_size: 10
+				text: "Catherine Zuckerman, (publicado el 4 de julio de 2019), 'Todo lo que querias saber sobre las estrellas' , \nrecuperado de https://www.nationalgeographicla.com/espacio/2019/07/todo-lo-que-querias-saber-sobre-las-estrellas , 20 de agosto 2020"
+
