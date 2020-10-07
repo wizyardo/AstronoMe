@@ -1,2 +1,2 @@
 # AstronoMe
-App, created using python and kivy
+Mobile App, created using python and kivy
